@@ -1,0 +1,4 @@
+create enviromental variable
+enviromental variable name is lDream
+
+setup is path;name;pass
