@@ -1,4 +1,4 @@
-package models;
+package com.wordviz.models;
 
 import java.sql.Timestamp;
 

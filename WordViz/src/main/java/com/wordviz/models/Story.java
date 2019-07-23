@@ -1,4 +1,4 @@
-package models;
+package com.wordviz.models;
 
 public class Story {
 	private Integer storyId;
