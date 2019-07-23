@@ -106,7 +106,4 @@ public class Story {
 	public void setVote(Integer vote) {
 		this.vote = vote;
 	}
-	
-	
-
 }
