@@ -1,6 +1,7 @@
 package com.wordviz.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Story implements Serializable {
@@ -34,13 +35,24 @@ public class Story implements Serializable {
 		this.name = name;
 		this.tags = tags;
 		this.type = type;
+		this.tags = new ArrayList<Tag>();
+	}
+	
+	
+	public Story(Integer author, String name, Integer type) {
+		super();
+		this.author = author;
+		this.name = name;
+		this.type = type;
 	}
 
 	@Override
 	public String toString() {
-		return "story [storyId=" + storyId + ", author=" + author + ", name=" + name + ", type=" + type + ", vote="
-				+ vote + "]";
+		return "Story [storyId=" + storyId + ", author=" + author + ", name=" + name + ", tags=" + tags + ", type="
+				+ type + ", vote=" + vote + "]";
 	}
+
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -48,10 +60,12 @@ public class Story implements Serializable {
 		result = prime * result + ((author == null) ? 0 : author.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((storyId == null) ? 0 : storyId.hashCode());
+		result = prime * result + ((tags == null) ? 0 : tags.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((vote == null) ? 0 : vote.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -76,6 +90,11 @@ public class Story implements Serializable {
 				return false;
 		} else if (!storyId.equals(other.storyId))
 			return false;
+		if (tags == null) {
+			if (other.tags != null)
+				return false;
+		} else if (!tags.equals(other.tags))
+			return false;
 		if (type == null) {
 			if (other.type != null)
 				return false;
@@ -88,6 +107,8 @@ public class Story implements Serializable {
 			return false;
 		return true;
 	}
+
+	
 	public Integer getStoryId() {
 		return storyId;
 	}
