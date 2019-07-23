@@ -1,8 +1,11 @@
 package com.wordviz.models;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class Chapter {
+public class Chapter implements Serializable {
+
+	private static final long serialVersionUID = 1709166986371384560L;
 	private Integer chapterId;
 	private Integer storyId;
 	private String name;

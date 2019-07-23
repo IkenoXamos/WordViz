@@ -1,29 +1,41 @@
 package com.wordviz.models;
 
-public class Story {
+import java.io.Serializable;
+import java.util.List;
+
+public class Story implements Serializable {
+
+	private static final long serialVersionUID = -5036618377447956825L;
 	private Integer storyId;
 	private Integer author;
 	private String name;
+	private List<Tag> tags;
 	private Integer type;
 	private Integer vote;
 	
 	public Story() {
 		super();
 	}
-	public Story(Integer storyId, Integer author, String name, Integer type, Integer vote) {
+	
+	public Story(Integer storyId, Integer author, String name, List<Tag> tags, Integer type, Integer vote) {
 		super();
 		this.storyId = storyId;
 		this.author = author;
 		this.name = name;
+		this.tags = tags;
 		this.type = type;
 		this.vote = vote;
 	}
-	public Story(Integer author, String name, Integer type) {
+
+	
+	public Story(Integer author, String name, List<Tag> tags, Integer type) {
 		super();
 		this.author = author;
 		this.name = name;
+		this.tags = tags;
 		this.type = type;
 	}
+
 	@Override
 	public String toString() {
 		return "story [storyId=" + storyId + ", author=" + author + ", name=" + name + ", type=" + type + ", vote="
@@ -106,4 +118,12 @@ public class Story {
 	public void setVote(Integer vote) {
 		this.vote = vote;
 	}
+	public List<Tag> getTags() {
+		return tags;
+	}
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+	
+	
 }
