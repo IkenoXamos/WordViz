@@ -1,5 +1,6 @@
 package com.wordviz.test;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
@@ -14,11 +15,13 @@ public class TagTest {
 
 	@Before
 	public void setUp() throws Exception {
+		t1 = new Tag(1, "Fiction");
+		t2 = new Tag(2, "Non-Fiction");
 	}
 
 	@Test
 	public void testHashCode() {
-		fail("Not yet implemented");
+		assertTrue(t1.hashCode() != t2.hashCode());
 	}
 
 	@Test
