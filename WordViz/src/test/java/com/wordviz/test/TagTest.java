@@ -1,11 +1,16 @@
 package com.wordviz.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import com.wordviz.models.Tag;
+
 public class TagTest {
+	
+	private Tag t1 = null;
+	private Tag t2 = null;
 
 	@Before
 	public void setUp() throws Exception {
