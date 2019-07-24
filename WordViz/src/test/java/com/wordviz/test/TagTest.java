@@ -1,5 +1,6 @@
 package com.wordviz.test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -7,9 +8,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.wordviz.models.Tag;
+import com.wordviz.models.User;
 
 public class TagTest {
-	
+
 	private Tag t1 = null;
 	private Tag t2 = null;
 
@@ -25,17 +27,21 @@ public class TagTest {
 	}
 
 	@Test
-	public void testTag() {
-		fail("Not yet implemented");
+	public void testEmptyConstructor() {
+		assertTrue(new Tag() instanceof Tag);
+		assertFalse(null instanceof Tag);
 	}
 
 	@Test
-	public void testTagString() {
-		fail("Not yet implemented");
+	public void testPartialConstructor() {
+		Tag one = new Tag("Development");
+		assertTrue(one instanceof Tag);
+		Tag two = new Tag("Self Help");
+		assertTrue(one != two);
 	}
 
 	@Test
-	public void testTagIntegerString() {
+	public void testFullConstructor() {
 		fail("Not yet implemented");
 	}
 
