@@ -34,7 +34,10 @@ public class TagTest {
 
 	@Test
 	public void testFullConstructor() {
-		fail("Not yet implemented");
+		Tag one = new Tag(3, "Development");
+		assertTrue(one instanceof Tag);
+		Tag two = new Tag(4, "Self Help");
+		assertTrue(one != two);
 	}
 
 	@Test
