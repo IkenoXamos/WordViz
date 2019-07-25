@@ -21,6 +21,10 @@ public class UserService {
 		
 		User u = userRepository.findByUsername(username);
 		
+		if(u == null) {
+			return null;
+		}
+		
 		if(u.getPassword().equals(password)) {
 			session.setAttribute("currentUser", u);
 			return u;
