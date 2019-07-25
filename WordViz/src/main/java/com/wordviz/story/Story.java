@@ -1,25 +1,60 @@
-package com.wordviz.models;
+package com.wordviz.story;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
-public class Story implements Serializable {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
-	private static final long serialVersionUID = -5036618377447956825L;
+import com.wordviz.tag.Tag;
+import com.wordviz.user.User;
+
+@Entity
+@Table(name = "story")
+public class Story {
+
+	@Id
+	@GeneratedValue
+	@Column(name = "storyId")
 	private Integer storyId;
-	private Integer author;
+
+	@NotNull
+	@ManyToOne(optional = false)
+	@JoinColumn(name = "author")
+	private User author;
+
+	@NotNull
+	@Column(name = "name")
 	private String name;
+
+	@ManyToMany
+	@JoinTable(
+			name = "storyTagsJT",
+			joinColumns = @JoinColumn(name = "storyId"),
+			inverseJoinColumns = @JoinColumn(name = "tagId"))
 	private List<Tag> tags;
+
+	@NotNull
+	@Column(name = "type")
 	private Integer type;
+	
+	@Column(name = "vote")
 	private Integer vote;
-	
-	public Story() {
-		super();
+
+	public Story(User author, String name, Integer type) {
+		this.author = author;
+		this.name = name;
+		this.type = type;
 	}
-	
-	public Story(Integer storyId, Integer author, String name, List<Tag> tags, Integer type, Integer vote) {
-		super();
+
+	public Story(Integer storyId, User author, String name, List<Tag> tags, Integer type, Integer vote) {
 		this.storyId = storyId;
 		this.author = author;
 		this.name = name;
@@ -28,31 +63,60 @@ public class Story implements Serializable {
 		this.vote = vote;
 	}
 
-	
-	public Story(Integer author, String name, List<Tag> tags, Integer type) {
-		super();
-		this.author = author;
-		this.name = name;
-		this.tags = tags;
-		this.type = type;
-		this.tags = new ArrayList<Tag>();
+	public Integer getStoryId() {
+		return storyId;
 	}
-	
-	
-	public Story(Integer author, String name, Integer type) {
-		super();
+
+	public void setStoryId(Integer storyId) {
+		this.storyId = storyId;
+	}
+
+	public User getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(User author) {
 		this.author = author;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
 		this.name = name;
+	}
+
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
 		this.type = type;
 	}
 
+	public Integer getVote() {
+		return vote;
+	}
+
+	public void setVote(Integer vote) {
+		this.vote = vote;
+	}
+
+	public List<Tag> getTags() {
+		return tags;
+	}
+
+	public void setTags(List<Tag> tags) {
+		this.tags = tags;
+	}
+	
 	@Override
 	public String toString() {
 		return "Story [storyId=" + storyId + ", author=" + author + ", name=" + name + ", tags=" + tags + ", type="
 				+ type + ", vote=" + vote + "]";
 	}
 
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -107,44 +171,4 @@ public class Story implements Serializable {
 			return false;
 		return true;
 	}
-
-	
-	public Integer getStoryId() {
-		return storyId;
-	}
-	public void setStoryId(Integer storyId) {
-		this.storyId = storyId;
-	}
-	public Integer getAuthor() {
-		return author;
-	}
-	public void setAuthor(Integer author) {
-		this.author = author;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public Integer getType() {
-		return type;
-	}
-	public void setType(Integer type) {
-		this.type = type;
-	}
-	public Integer getVote() {
-		return vote;
-	}
-	public void setVote(Integer vote) {
-		this.vote = vote;
-	}
-	public List<Tag> getTags() {
-		return tags;
-	}
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;
-	}
-	
-	
 }

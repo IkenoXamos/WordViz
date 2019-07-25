@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.wordviz.models.User;
+import com.wordviz.user.User;
 
 public class UserTest {
 	
@@ -16,12 +16,6 @@ public class UserTest {
 	public void setUp() throws Exception {
 		u1 = new User(1, "un1", "pw1".hashCode(), "dn1");
 		u2 = new User(2, "un2", "pw2".hashCode(), "dn2");
-	}
-
-	@Test
-	public void testEmptyConstructor() {
-		assertTrue(new User() instanceof User);
-		assertFalse(null instanceof User);
 	}
 
 	@Test
@@ -112,7 +106,7 @@ public class UserTest {
 		assertFalse(u1.equals(null));
 		assertFalse(u1.equals(""));
 		assertFalse(u1.equals(new Object()));
-		assertFalse(u1.equals(new User()));
+		assertFalse(u1.equals(new User("", 0)));
 		assertTrue(u1.equals(u1));
 	}
 

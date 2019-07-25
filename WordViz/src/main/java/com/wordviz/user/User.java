@@ -1,19 +1,34 @@
-package com.wordviz.models;
+package com.wordviz.user;
 
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
-public class User implements Serializable {
+@Entity
+@Table(name = "users")
+public class User {
 
-	private static final long serialVersionUID = 723948016059192629L;
-	
-	
+	@Id
+	@GeneratedValue
+	@Column(name = "userId")
 	private Integer userId;
-	private String username;
-	private Integer password;
-	private String displayName;
 	
-	public User() {
-	}
+	@Size(max = 25)
+	@NotNull
+	@Column(name = "username")
+	private String username;
+	
+	@NotNull
+	@Column(name = "password")
+	private Integer password;
+	
+	@Size(max = 25)
+	@Column(name = "displayName")
+	private String displayName;
 
 	public User(String username, Integer password) {
 		this.username = username;
@@ -65,6 +80,12 @@ public class User implements Serializable {
 	public void setDisplayName(String displayName) {
 		this.displayName = displayName;
 	}
+	
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", displayName="
+				+ displayName + "]";
+	}
 
 	@Override
 	public int hashCode() {
@@ -107,11 +128,5 @@ public class User implements Serializable {
 		} else if (!username.equals(other.username))
 			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", displayName="
-				+ displayName + "]";
 	}
 }

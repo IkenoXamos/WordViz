@@ -1,14 +1,12 @@
 package com.wordviz.test;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.wordviz.models.Tag;
-import com.wordviz.models.User;
+import com.wordviz.tag.Tag;
 
 public class TagTest {
 
@@ -24,12 +22,6 @@ public class TagTest {
 	@Test
 	public void testHashCode() {
 		assertTrue(t1.hashCode() != t2.hashCode());
-	}
-
-	@Test
-	public void testEmptyConstructor() {
-		assertTrue(new Tag() instanceof Tag);
-		assertFalse(null instanceof Tag);
 	}
 
 	@Test
@@ -74,5 +66,4 @@ public class TagTest {
 	public void testToString() {
 		fail("Not yet implemented");
 	}
-
 }
