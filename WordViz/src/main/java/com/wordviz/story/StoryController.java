@@ -16,19 +16,19 @@ import com.wordviz.user.UserRepository;
 public class StoryController {
 
 	@Autowired
-	private StoryRepository storyRepository;
+	private StoryService storyService;
 	
 	@Autowired
 	private UserRepository userRepository;
 	
 	@GetMapping(value = "/all")
 	public List<Story> getAllStories() {
-		return storyRepository.findAll();
+		return storyService.findAll();
 	}
 	
 	@PostMapping(value = "/new")
 	public Story createStory(@RequestBody Story story) {
 		userRepository.save(story.getAuthor());
-		return storyRepository.save(story);
+		return storyService.save(story);
 	}
 }

@@ -14,15 +14,19 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public User login(User user) {
+	public User login(String username, Integer password) {
 		if(!session.isNew()) {
 			logout();
 		}
 		
-		User u = userRepository.findByUsername(user.getUsername());
+		User u = userRepository.findByUsername(username);
 		
-		if(u.getPassword().equals(user.getPassword())) {
-			session.setAttribute("currentUser", user);
+		if(u == null) {
+			return null;
+		}
+		
+		if(u.getPassword().equals(password)) {
+			session.setAttribute("currentUser", u);
 			return u;
 		} else {
 			return null;
