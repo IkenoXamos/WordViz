@@ -1,16 +1,24 @@
-package com.wordviz.models;
+package com.wordviz.tag;
 
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
-public class Tag implements Serializable {
+@Entity
+@Table(name = "tags")
+public class Tag {
 
-	private static final long serialVersionUID = 8627919286409033094L;
-
+	@Id
+	@GeneratedValue
+	@Column(name = "tagId")
 	private Integer tagId;
-	private String name;
 	
-	public Tag() {
-	}
+	@NotNull
+	@Column(name = "name")
+	private String name;
 	
 	public Tag(String name) {
 		this.name = name;
@@ -35,6 +43,11 @@ public class Tag implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	@Override
+	public String toString() {
+		return "Tag [tagId=" + tagId + ", name=" + name + "]";
 	}
 
 	@Override
@@ -66,10 +79,5 @@ public class Tag implements Serializable {
 		} else if (!tagId.equals(other.tagId))
 			return false;
 		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "Tag [tagId=" + tagId + ", name=" + name + "]";
 	}
 }
