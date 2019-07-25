@@ -47,6 +47,11 @@ public class Story {
 	
 	@Column(name = "vote")
 	private Integer vote;
+	
+	public Story() {
+		this.name = "";
+		this.type = 1;
+	}
 
 	public Story(User author, String name, Integer type) {
 		this.author = author;

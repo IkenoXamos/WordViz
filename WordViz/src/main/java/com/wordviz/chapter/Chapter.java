@@ -43,6 +43,10 @@ public class Chapter {
 	@Column(name = "timestamp")
 	private Timestamp timestamp;
 	
+	public Chapter() {
+		super();
+	}
+	
 	public Chapter(@NotNull Story story, Timestamp timestamp) {
 		this.story = story;
 		this.timestamp = timestamp;
