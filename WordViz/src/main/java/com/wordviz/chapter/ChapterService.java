@@ -3,7 +3,9 @@ package com.wordviz.chapter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ChapterService {
 	
 	@Autowired
@@ -20,5 +22,4 @@ public class ChapterService {
 	public Chapter update(Chapter chapter) {
 		return chapterRepository.save(chapter);
 	}
-
 }

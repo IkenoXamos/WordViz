@@ -1,5 +1,7 @@
 package com.wordviz.user;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,7 +12,9 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
+
+	private static final long serialVersionUID = -3177995515406462034L;
 
 	@Id
 	@GeneratedValue
@@ -29,6 +33,12 @@ public class User {
 	@Size(max = 25)
 	@Column(name = "displayName")
 	private String displayName;
+	
+	public User() {
+		super();
+		this.username = "";
+		this.password = 0;
+	}
 
 	public User(String username, Integer password) {
 		this.username = username;

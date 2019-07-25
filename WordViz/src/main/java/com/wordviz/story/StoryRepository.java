@@ -17,7 +17,4 @@ public interface StoryRepository extends JpaRepository<Story, Integer> {
 	
 	@Nullable
 	List<Story> findByType(Integer type);
-	
-	@Nullable
-	List<Story> findByTagsNameIn(List<String> names);
 }
