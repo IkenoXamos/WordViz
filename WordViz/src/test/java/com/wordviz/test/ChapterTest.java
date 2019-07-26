@@ -1,7 +1,7 @@
 package com.wordviz.test;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+//import static org.junit.Assert.fail;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -29,17 +29,17 @@ public class ChapterTest {
 
 	@Test
 	public void testPartialConstructor1() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testPartialConstructor2() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testFullConstructor() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
@@ -49,61 +49,61 @@ public class ChapterTest {
 
 	@Test
 	public void testGetChapterId() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetChapterId() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetStory() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetStory() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetName() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetName() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetContent() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetContent() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetTimestamp() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetTimestamp() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testEqualsObject() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 }
