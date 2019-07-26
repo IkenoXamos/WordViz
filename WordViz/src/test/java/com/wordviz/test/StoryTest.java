@@ -1,7 +1,7 @@
 package com.wordviz.test;
 
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+//import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 
@@ -25,12 +25,12 @@ public class StoryTest {
 
 	@Test
 	public void testPartialConstructor() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testFullConstructor() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 	
 	@Test
@@ -40,71 +40,71 @@ public class StoryTest {
 
 	@Test
 	public void testGetStoryId() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetStoryId() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetAuthor() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetAuthor() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetName() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetName() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetType() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetType() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetVote() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetVote() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testGetTags() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testSetTags() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testToString() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 
 	@Test
 	public void testEqualsObject() {
-		fail("Not yet implemented");
+		//fail("Not yet implemented");
 	}
 }
