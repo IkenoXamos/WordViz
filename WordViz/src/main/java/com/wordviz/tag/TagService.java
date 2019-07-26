@@ -14,4 +14,8 @@ public class TagService {
 	public List<Tag> findAll() {
 		return tagRepository.findAll();
 	}
+
+	public Tag save(Tag tag) {
+		return tagRepository.save(tag);
+	}
 }
