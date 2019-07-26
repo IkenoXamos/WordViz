@@ -32,7 +32,4 @@ public class ChapterController {
 	public Chapter updateChapter(@RequestBody Chapter chapter) {
 		return chapterService.update(chapter);
 	}
-	
-	
-	
 }
