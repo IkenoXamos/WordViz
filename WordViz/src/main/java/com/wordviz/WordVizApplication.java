@@ -21,12 +21,4 @@ public class WordVizApplication extends SpringBootServletInitializer {
 		return builder.sources(WordVizApplication.class);
 	}
 	
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedMethods("GET", "POST");
-            }
-        };
-    }
 }
