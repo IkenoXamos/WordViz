@@ -1,4 +1,4 @@
-package com.wordviz.test;
+package com.wordviz.test.models;
 
 import static org.junit.Assert.assertTrue;
 //import static org.junit.Assert.fail;
