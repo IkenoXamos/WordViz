@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.wordviz.story.Story;
+
 @Service
 public class ChapterService {
 	
@@ -17,6 +19,10 @@ public class ChapterService {
 
 	public List<Chapter> findAll() {
 		return chapterRepository.findAll();
+	}
+	
+	public List<Chapter> findByStory(Story story) {
+		return chapterRepository.findByStory(story);
 	}
 
 	public Chapter update(Chapter chapter) {

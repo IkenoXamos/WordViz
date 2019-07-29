@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.wordviz.chapter.Chapter;
+import com.wordviz.chapter.ChapterService;
 import com.wordviz.user.UserRepository;
 
 @RestController
@@ -19,6 +21,9 @@ public class StoryController {
 
 	@Autowired
 	private StoryService storyService;
+	
+	@Autowired
+	private ChapterService chapterService;
 	
 	@Autowired
 	private UserRepository userRepository;
@@ -32,5 +37,10 @@ public class StoryController {
 	public Story createStory(@RequestBody Story story) {
 		userRepository.save(story.getAuthor());
 		return storyService.save(story);
+	}
+	
+	@PostMapping(value = "/chapters")
+	public List<Chapter> getChapters(@RequestBody Story story) {
+		return chapterService.findByStory(story);
 	}
 }
