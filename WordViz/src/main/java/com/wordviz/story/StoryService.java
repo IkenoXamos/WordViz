@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.wordviz.user.User;
+
 @Service
 public class StoryService {
 	
@@ -27,5 +29,9 @@ public class StoryService {
 	public Story findById(Integer id) {
 		Optional<Story> tmp = storyRepository.findById(id);
 		return (tmp.isPresent()) ? tmp.get() : null;
+	}
+
+	public List<Story> findByAuthor(User user) {
+		return storyRepository.findByAuthor(user);
 	}
 }
