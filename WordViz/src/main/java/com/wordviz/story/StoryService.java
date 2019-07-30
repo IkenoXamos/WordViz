@@ -19,7 +19,7 @@ public class StoryService {
 	}
 
 	public List<Story> findAll() {
-		return storyRepository.findAll();
+		return storyRepository.findAllByOrderByStoryIdAsc();
 	}
 	
 	public Story findByName(String name) {
@@ -32,6 +32,6 @@ public class StoryService {
 	}
 
 	public List<Story> findByAuthor(User user) {
-		return storyRepository.findByAuthor(user);
+		return storyRepository.findByAuthorOrderByStoryIdAsc(user);
 	}
 }
