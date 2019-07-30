@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.wordviz.chapter.Chapter;
 import com.wordviz.chapter.ChapterService;
+import com.wordviz.user.User;
 import com.wordviz.user.UserRepository;
 
 @RestController
@@ -42,5 +43,10 @@ public class StoryController {
 	@PostMapping(value = "/chapters")
 	public List<Chapter> getChapters(@RequestBody Story story) {
 		return chapterService.findByStory(story);
+	}
+	
+	@PostMapping(value = "/user")
+	public List<Story> getStoriesByUser(@RequestBody User user) {
+		return storyService.findByAuthor(user);
 	}
 }
