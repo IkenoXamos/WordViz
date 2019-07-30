@@ -46,5 +46,28 @@ public class TagControllerTest {
 				.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
 	}
+	
+	@Test
+	public void allTagsStory() throws Exception {
+		mvc.perform(get("/tag/story")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void allTagsBlog() throws Exception {
+		mvc.perform(get("/tag/blog")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+	}
+	
+	@Test
+	public void allTagsRandom() throws Exception {
+		mvc.perform(get("/tag/randomInput")
+				.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isOk());
+	}
+	
+	
 
 }
