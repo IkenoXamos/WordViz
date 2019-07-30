@@ -18,11 +18,11 @@ public class ChapterService {
 	}
 
 	public List<Chapter> findAll() {
-		return chapterRepository.findAllOrderByTimestamp();
+		return chapterRepository.findAllByOrderByTimestampAsc();
 	}
 	
 	public List<Chapter> findByStory(Story story) {
-		return chapterRepository.findByStoryOrderByChapterId(story);
+		return chapterRepository.findByStoryOrderByChapterIdAsc(story);
 	}
 
 	public Chapter update(Chapter chapter) {

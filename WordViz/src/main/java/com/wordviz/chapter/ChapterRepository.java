@@ -8,8 +8,8 @@ import com.wordviz.story.Story;
 
 public interface ChapterRepository extends JpaRepository<Chapter, Integer> {
 	
-	List<Chapter> findAllOrderByTimestamp();
+	List<Chapter> findAllByOrderByTimestampAsc();
 	
-	List<Chapter> findByStoryOrderByChapterId(Story story);
+	List<Chapter> findByStoryOrderByChapterIdAsc(Story story);
 
 }

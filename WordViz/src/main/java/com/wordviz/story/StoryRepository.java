@@ -10,14 +10,14 @@ import com.wordviz.user.User;
 public interface StoryRepository extends JpaRepository<Story, Integer> {
 	
 	@Nullable
-	List<Story> findAllOrderByStoryId();
+	List<Story> findAllByOrderByStoryIdAsc();
 
 	@Nullable
-	List<Story> findByAuthorOrderByStoryId(User author);
+	List<Story> findByAuthorOrderByStoryIdAsc(User author);
 	
 	@Nullable
 	Story findByName(String name);
 	
 	@Nullable
-	List<Story> findByTypeOrderByStoryId(Integer type);
+	List<Story> findByTypeOrderByStoryIdAsc(Integer type);
 }
