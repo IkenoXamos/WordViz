@@ -15,8 +15,8 @@ public class TagTest {
 
 	@Before
 	public void setUp() throws Exception {
-		t1 = new Tag(1, "Fiction");
-		t2 = new Tag(2, "Non-Fiction");
+		t1 = new Tag(1, "Fiction", 1);
+		t2 = new Tag(2, "Non-Fiction", 1);
 	}
 
 	@Test
@@ -34,9 +34,9 @@ public class TagTest {
 
 	@Test
 	public void testFullConstructor() {
-		Tag one = new Tag(3, "Development");
+		Tag one = new Tag(3, "Development", 2);
 		assertTrue(one instanceof Tag);
-		Tag two = new Tag(4, "Self Help");
+		Tag two = new Tag(4, "Self Help", 2);
 		assertTrue(one != two);
 	}
 
@@ -57,6 +57,16 @@ public class TagTest {
 
 	@Test
 	public void testSetName() {
+		//fail("Not yet implemented");
+	}
+	
+	@Test
+	public void testGetType() {
+		//fail("Not yet implemented");
+	}
+
+	@Test
+	public void testSetType() {
 		//fail("Not yet implemented");
 	}
 

@@ -20,18 +20,30 @@ public class Tag {
 	@Column(name = "name")
 	private String name;
 	
+	@NotNull
+	@Column(name = "type")
+	private Integer type;
+	
 	public Tag() {
 		super();
 		this.name = "";
+		this.type = 1;
 	}
 	
 	public Tag(String name) {
 		this.name = name;
+		this.type = 1;
 	}
 	
-	public Tag(Integer tagId, String name) {
+	public Tag(String name, Integer type) {
+		this.name = name;
+		this.type = type;
+	}
+	
+	public Tag(Integer tagId, String name, Integer type) {
 		this.tagId = tagId;
 		this.name = name;
+		this.type = type;
 	}
 
 	public Integer getTagId() {
@@ -50,9 +62,17 @@ public class Tag {
 		this.name = name;
 	}
 	
+	public Integer getType() {
+		return type;
+	}
+
+	public void setType(Integer type) {
+		this.type = type;
+	}
+
 	@Override
 	public String toString() {
-		return "Tag [tagId=" + tagId + ", name=" + name + "]";
+		return "Tag [tagId=" + tagId + ", name=" + name + ", type=" + type + "]";
 	}
 
 	@Override
@@ -61,6 +81,7 @@ public class Tag {
 		int result = 1;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((tagId == null) ? 0 : tagId.hashCode());
+		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
 
@@ -82,6 +103,11 @@ public class Tag {
 			if (other.tagId != null)
 				return false;
 		} else if (!tagId.equals(other.tagId))
+			return false;
+		if (type == null) {
+			if (other.type != null)
+				return false;
+		} else if (!type.equals(other.type))
 			return false;
 		return true;
 	}
