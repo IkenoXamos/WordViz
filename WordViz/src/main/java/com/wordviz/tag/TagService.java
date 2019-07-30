@@ -18,4 +18,8 @@ public class TagService {
 	public Tag save(Tag tag) {
 		return tagRepository.save(tag);
 	}
+	
+	public List<Tag> findByType(Integer type) {
+		return tagRepository.findByType(type);
+	}
 }
