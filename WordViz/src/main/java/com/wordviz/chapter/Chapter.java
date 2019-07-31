@@ -31,7 +31,7 @@ public class Chapter {
 	@JoinColumn(name = "storyId")
 	private Story story;
 	
-	@Size(max = 25)
+	@Size(max = 50)
 	@Column(name = "name")
 	private String name;
 	
