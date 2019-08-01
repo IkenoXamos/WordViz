@@ -51,7 +51,7 @@ public class StoryController {
 	}
 	
 	@PostMapping(value = "/update")
-	public Story getStoriesByUser(@RequestBody Story story) {
+	public Story updateStory(@RequestBody Story story) {
 		return storyService.save(story);
 	}
 }
