@@ -1,4 +1,4 @@
-package com.wordviz.test;
+package com.wordviz.test.models;
 
 import static org.junit.Assert.assertTrue;
 //import static org.junit.Assert.fail;
@@ -6,7 +6,11 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.wordviz.story.Story;
 import com.wordviz.tag.Tag;
+
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
 
 public class TagTest {
 
@@ -17,11 +21,6 @@ public class TagTest {
 	public void setUp() throws Exception {
 		t1 = new Tag(1, "Fiction", 1);
 		t2 = new Tag(2, "Non-Fiction", 1);
-	}
-
-	@Test
-	public void testHashCode() {
-		assertTrue(t1.hashCode() != t2.hashCode());
 	}
 
 	@Test
@@ -42,41 +41,46 @@ public class TagTest {
 
 	@Test
 	public void testGetTagId() {
-		//fail("Not yet implemented");
+		assertTrue(t1.getTagId().equals(1));
 	}
 
 	@Test
 	public void testSetTagId() {
-		//fail("Not yet implemented");
+		t1.setTagId(33);
+		assertTrue(t1.getTagId().equals(33));
 	}
 
 	@Test
 	public void testGetName() {
-		//fail("Not yet implemented");
+		assertTrue(t1.getName().equals("Fiction"));
 	}
 
 	@Test
 	public void testSetName() {
-		//fail("Not yet implemented");
+		t1.setName("Adventure");
+		assertTrue(t1.getName().equals("Adventure"));
 	}
 	
 	@Test
 	public void testGetType() {
-		//fail("Not yet implemented");
+		assertTrue(t1.getType().equals(1));
 	}
 
 	@Test
 	public void testSetType() {
-		//fail("Not yet implemented");
+		t1.setType(3);
+		assertTrue(t1.getType().equals(3));
 	}
 
 	@Test
 	public void testEqualsObject() {
-		//fail("Not yet implemented");
+		EqualsVerifier.forClass(Tag.class)
+		.suppress(Warning.NONFINAL_FIELDS)
+		.verify();
 	}
 
 	@Test
 	public void testToString() {
-		//fail("Not yet implemented");
+		assertTrue((t1.toString() instanceof String));
 	}
 }

@@ -80,7 +80,6 @@ public class Tag {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((tagId == null) ? 0 : tagId.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		return result;
 	}
@@ -91,18 +90,13 @@ public class Tag {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (!(obj instanceof Tag))
 			return false;
 		Tag other = (Tag) obj;
 		if (name == null) {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
-			return false;
-		if (tagId == null) {
-			if (other.tagId != null)
-				return false;
-		} else if (!tagId.equals(other.tagId))
 			return false;
 		if (type == null) {
 			if (other.type != null)

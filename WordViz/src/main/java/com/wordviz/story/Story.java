@@ -128,7 +128,6 @@ public class Story {
 		int result = 1;
 		result = prime * result + ((author == null) ? 0 : author.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((storyId == null) ? 0 : storyId.hashCode());
 		result = prime * result + ((tags == null) ? 0 : tags.hashCode());
 		result = prime * result + ((type == null) ? 0 : type.hashCode());
 		result = prime * result + ((vote == null) ? 0 : vote.hashCode());
@@ -141,7 +140,7 @@ public class Story {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (!(obj instanceof Story))
 			return false;
 		Story other = (Story) obj;
 		if (author == null) {
@@ -153,11 +152,6 @@ public class Story {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
-			return false;
-		if (storyId == null) {
-			if (other.storyId != null)
-				return false;
-		} else if (!storyId.equals(other.storyId))
 			return false;
 		if (tags == null) {
 			if (other.tags != null)
