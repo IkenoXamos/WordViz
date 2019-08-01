@@ -49,4 +49,9 @@ public class StoryController {
 	public List<Story> getStoriesByUser(@RequestBody User user) {
 		return storyService.findByAuthor(user);
 	}
+	
+	@PostMapping(value = "/update")
+	public Story updateStory(@RequestBody Story story) {
+		return storyService.save(story);
+	}
 }
