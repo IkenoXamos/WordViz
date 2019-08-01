@@ -15,6 +15,9 @@ import com.wordviz.story.Story;
 import com.wordviz.tag.Tag;
 import com.wordviz.user.User;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
+
 public class ChapterTest {
 
 	Chapter c1 = null;
@@ -58,10 +61,6 @@ public class ChapterTest {
 		assertTrue(one != two);
 	}
 
-	@Test
-	public void testHashCode() {
-		assertTrue(c1.hashCode() != c2.hashCode());
-	}
 
 	@Test
 	public void testGetChapterId() {
@@ -127,9 +126,8 @@ public class ChapterTest {
 
 	@Test
 	public void testEqualsObject() {
-		Chapter temp = new Chapter(2, new Story(2, new User("un2", "pw2".hashCode()), "name2", new ArrayList<Tag>(), 2, 0),
-				"name2", "", new Timestamp(20000));
-		assertTrue(c2.equals(temp));
-		assertFalse(c2.equals(c1));
+		EqualsVerifier.forClass(Chapter.class)
+		.suppress(Warning.NONFINAL_FIELDS)
+		.verify();
 	}
 }

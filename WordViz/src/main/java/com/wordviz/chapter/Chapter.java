@@ -118,7 +118,6 @@ public class Chapter {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((chapterId == null) ? 0 : chapterId.hashCode());
 		result = prime * result + ((content == null) ? 0 : content.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((story == null) ? 0 : story.hashCode());
@@ -132,14 +131,10 @@ public class Chapter {
 			return true;
 		if (obj == null)
 			return false;
-		if (getClass() != obj.getClass())
+		if (!(obj instanceof Chapter))
 			return false;
 		Chapter other = (Chapter) obj;
-		if (chapterId == null) {
-			if (other.chapterId != null)
-				return false;
-		} else if (!chapterId.equals(other.chapterId))
-			return false;
+
 		if (content == null) {
 			if (other.content != null)
 				return false;

@@ -6,7 +6,11 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.wordviz.story.Story;
 import com.wordviz.tag.Tag;
+
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
 
 public class TagTest {
 
@@ -17,11 +21,6 @@ public class TagTest {
 	public void setUp() throws Exception {
 		t1 = new Tag(1, "Fiction", 1);
 		t2 = new Tag(2, "Non-Fiction", 1);
-	}
-
-	@Test
-	public void testHashCode() {
-		assertTrue(t1.hashCode() != t2.hashCode());
 	}
 
 	@Test
@@ -75,8 +74,9 @@ public class TagTest {
 
 	@Test
 	public void testEqualsObject() {
-		Tag t3 = new Tag(2, "Non-Fiction", 1);
-		assertTrue(t2.equals(t3));
+		EqualsVerifier.forClass(Tag.class)
+		.suppress(Warning.NONFINAL_FIELDS)
+		.verify();
 	}
 
 	@Test

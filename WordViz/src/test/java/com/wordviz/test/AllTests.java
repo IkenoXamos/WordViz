@@ -9,6 +9,7 @@ import com.wordviz.test.controller.StoryControllerTest;
 import com.wordviz.test.controller.TagControllerTest;
 import com.wordviz.test.controller.UserControllerTest;
 import com.wordviz.test.models.ChapterTest;
+import com.wordviz.test.models.LoginTemplateTest;
 import com.wordviz.test.models.StoryTest;
 import com.wordviz.test.models.TagTest;
 import com.wordviz.test.models.UserTest;
@@ -27,6 +28,7 @@ import com.wordviz.test.services.UserServiceTest;
 		StoryTest.class,
 		TagTest.class,
 		UserTest.class,
+		LoginTemplateTest.class,
 		ChapterServiceTest.class,
 		StoryServiceTest.class,
 		TagServiceTest.class,

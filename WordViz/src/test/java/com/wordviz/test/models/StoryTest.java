@@ -14,6 +14,9 @@ import com.wordviz.story.Story;
 import com.wordviz.tag.Tag;
 import com.wordviz.user.User;
 
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
+
 public class StoryTest {
 	
 	Story s1 = null;
@@ -41,11 +44,6 @@ public class StoryTest {
 		assertTrue(one != two);
 	}
 	
-	@Test
-	public void testHashCode() {
-		assertTrue(s1.hashCode() != s2.hashCode());
-	}
-
 	@Test
 	public void testGetStoryId() {
 		assertTrue(s1.getStoryId().equals(1));
@@ -124,8 +122,9 @@ public class StoryTest {
 
 	@Test
 	public void testEqualsObject() {
-		Story s4 = new Story(2, new User("un2", "pw2".hashCode()), "name2", new ArrayList<Tag>(), 2, 0);
-		assertTrue(s2.equals(s4));
-		assertFalse(s1.equals(s4));
+		EqualsVerifier.forClass(Story.class)
+			.suppress(Warning.NONFINAL_FIELDS)
+			.verify();
+		
 	}
 }

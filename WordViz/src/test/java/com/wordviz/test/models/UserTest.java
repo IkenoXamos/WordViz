@@ -5,7 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.wordviz.story.Story;
 import com.wordviz.user.User;
+
+import nl.jqno.equalsverifier.EqualsVerifier;
+import nl.jqno.equalsverifier.Warning;
 
 public class UserTest {
 	
@@ -42,10 +46,6 @@ public class UserTest {
 		assertTrue(one != two);
 	}
 	
-	@Test
-	public void testHashCode() {
-		assertTrue(u1.hashCode() != u2.hashCode());
-	}
 
 	@Test
 	public void testGetUserId() {
@@ -112,6 +112,8 @@ public class UserTest {
 
 	@Test
 	public void testToString() {
-		assertTrue((u1.toString() instanceof String));
+		EqualsVerifier.forClass(User.class)
+		.suppress(Warning.NONFINAL_FIELDS)
+		.verify();
 	}
 }
