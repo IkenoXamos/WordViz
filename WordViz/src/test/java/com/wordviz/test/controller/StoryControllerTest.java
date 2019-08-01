@@ -62,6 +62,16 @@ public class StoryControllerTest {
 	}
 	
 	@Test
+	public void updateStoryTest() throws JsonProcessingException, Exception {
+		User u = new User("WillOma", 12345, "WilliamOma");
+		Story st = new Story(418, u, "Lord of the Frogs", null, 1, 0);
+		mvc.perform(post("/story/update")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(om.writeValueAsString(st)))
+				.andExpect(status().isOk());
+	}
+	
+	@Test
 	public void chaptersStoryTest() throws JsonProcessingException, Exception {
 		User u = new User("WillOma", 12345, "WilliamOma");
 		Story st = new Story(418, u, "Lord of the Frogs", null, 1, 0);
