@@ -1,9 +1,11 @@
 package com.wordviz.test.models;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 //import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -25,12 +27,18 @@ public class StoryTest {
 
 	@Test
 	public void testPartialConstructor() {
-		//fail("Not yet implemented");
+		Story one = new Story(new User("un1", "pw1".hashCode()), "name1", 1);
+		assertTrue(one instanceof Story);
+		Story two = new Story(new User("un2", "pw2".hashCode()), "name2", 2);
+		assertTrue(one != two);
 	}
 
 	@Test
 	public void testFullConstructor() {
-		//fail("Not yet implemented");
+		Story one = new Story(1, new User("un1", "pw1".hashCode()), "name1", new ArrayList<Tag>(), 1, 0);
+		assertTrue(one instanceof Story);
+		Story two = new Story(2, new User("un2", "pw2".hashCode()), "name2", new ArrayList<Tag>(), 2, 0);
+		assertTrue(one != two);
 	}
 	
 	@Test
@@ -40,71 +48,84 @@ public class StoryTest {
 
 	@Test
 	public void testGetStoryId() {
-		//fail("Not yet implemented");
+		assertTrue(s1.getStoryId().equals(1));
 	}
 
 	@Test
 	public void testSetStoryId() {
-		//fail("Not yet implemented");
+		s1.setStoryId(45);
+		assertTrue(s1.getStoryId().equals(45));
 	}
 
 	@Test
 	public void testGetAuthor() {
-		//fail("Not yet implemented");
+		User temp = new User("un1", "pw1".hashCode());
+		assertTrue(s1.getAuthor().equals(temp));
 	}
 
 	@Test
 	public void testSetAuthor() {
-		//fail("Not yet implemented");
+		User temp = new User("un2", "pass1".hashCode());
+		s1.setAuthor(temp);
+		assertTrue(s1.getAuthor().equals(temp));
 	}
 
 	@Test
 	public void testGetName() {
-		//fail("Not yet implemented");
+		assertTrue(s1.getName().equals("name1"));
 	}
 
 	@Test
 	public void testSetName() {
-		//fail("Not yet implemented");
+		s1.setName("True Name");
+		assertTrue(s1.getName().equals("True Name"));
 	}
 
 	@Test
 	public void testGetType() {
-		//fail("Not yet implemented");
+		assertTrue(s1.getType().equals(1));
 	}
 
 	@Test
 	public void testSetType() {
-		//fail("Not yet implemented");
+		s1.setType(3);
+		assertTrue(s1.getType().equals(3));
 	}
 
 	@Test
 	public void testGetVote() {
-		//fail("Not yet implemented");
+		assertTrue(s1.getVote().equals(0));
 	}
 
 	@Test
 	public void testSetVote() {
-		//fail("Not yet implemented");
+		s1.setVote(9001);
+		assertTrue(s1.getVote().equals(9001));
 	}
 
 	@Test
 	public void testGetTags() {
-		//fail("Not yet implemented");
+		List<Tag> tags = new ArrayList<Tag>();
+		assertTrue(s1.getTags().equals(tags));
 	}
 
 	@Test
 	public void testSetTags() {
-		//fail("Not yet implemented");
+		List<Tag> tags = new ArrayList<Tag>();
+		tags.add(new Tag(1, "Fiction", 1));
+		s1.setTags(tags);
+		assertTrue(s1.getTags().equals(tags));
 	}
 
 	@Test
 	public void testToString() {
-		//fail("Not yet implemented");
+		assertTrue((s1.toString() instanceof String));
 	}
 
 	@Test
 	public void testEqualsObject() {
-		//fail("Not yet implemented");
+		Story s4 = new Story(2, new User("un2", "pw2".hashCode()), "name2", new ArrayList<Tag>(), 2, 0);
+		assertTrue(s2.equals(s4));
+		assertFalse(s1.equals(s4));
 	}
 }

@@ -42,41 +42,45 @@ public class TagTest {
 
 	@Test
 	public void testGetTagId() {
-		//fail("Not yet implemented");
+		assertTrue(t1.getTagId().equals(1));
 	}
 
 	@Test
 	public void testSetTagId() {
-		//fail("Not yet implemented");
+		t1.setTagId(33);
+		assertTrue(t1.getTagId().equals(33));
 	}
 
 	@Test
 	public void testGetName() {
-		//fail("Not yet implemented");
+		assertTrue(t1.getName().equals("Fiction"));
 	}
 
 	@Test
 	public void testSetName() {
-		//fail("Not yet implemented");
+		t1.setName("Adventure");
+		assertTrue(t1.getName().equals("Adventure"));
 	}
 	
 	@Test
 	public void testGetType() {
-		//fail("Not yet implemented");
+		assertTrue(t1.getType().equals(1));
 	}
 
 	@Test
 	public void testSetType() {
-		//fail("Not yet implemented");
+		t1.setType(3);
+		assertTrue(t1.getType().equals(3));
 	}
 
 	@Test
 	public void testEqualsObject() {
-		//fail("Not yet implemented");
+		Tag t3 = new Tag(2, "Non-Fiction", 1);
+		assertTrue(t2.equals(t3));
 	}
 
 	@Test
 	public void testToString() {
-		//fail("Not yet implemented");
+		assertTrue((t1.toString() instanceof String));
 	}
 }

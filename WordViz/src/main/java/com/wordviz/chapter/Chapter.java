@@ -52,14 +52,14 @@ public class Chapter {
 		this.timestamp = timestamp;
 	}
 
-	public Chapter(@NotNull Story story, @Size(max = 25) String name, String content, Timestamp timestamp) {
+	public Chapter(@NotNull Story story, @Size(max = 50) String name, String content, Timestamp timestamp) {
 		this.story = story;
 		this.name = name;
 		this.content = content;
 		this.timestamp = timestamp;
 	}
 
-	public Chapter(Integer chapterId, @NotNull Story story, @Size(max = 25) String name, String content,
+	public Chapter(Integer chapterId, @NotNull Story story, @Size(max = 50) String name, String content,
 			Timestamp timestamp) {
 		this.chapterId = chapterId;
 		this.story = story;
