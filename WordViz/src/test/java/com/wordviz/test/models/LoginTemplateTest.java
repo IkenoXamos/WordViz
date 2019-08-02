@@ -1,6 +1,6 @@
 package com.wordviz.test.models;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,12 +11,10 @@ import nl.jqno.equalsverifier.EqualsVerifier;
 
 public class LoginTemplateTest {
 	private LoginTemplate lt1;
-	private LoginTemplate lt2;
 	
 	@Before
 	public void setup() {
 		lt1 = new LoginTemplate("Name1", 12345);
-		lt2 = new LoginTemplate("Name2", 24568);
 	}
 
 	@Test
@@ -66,10 +64,4 @@ public class LoginTemplateTest {
 	public void testToString() {
 		assertTrue((lt1.toString() instanceof String));
 	}
-	
-//	@Test
-//	public void testHashCode() {
-//		
-//	}
-
 }

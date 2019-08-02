@@ -1,6 +1,5 @@
 package com.wordviz.test.services;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -22,7 +21,6 @@ import com.wordviz.story.Story;
 import com.wordviz.story.StoryRepository;
 import com.wordviz.story.StoryService;
 import com.wordviz.user.User;
-import com.wordviz.user.UserService;
 
 @RunWith(SpringRunner.class)
 public class StoryServiceTest {

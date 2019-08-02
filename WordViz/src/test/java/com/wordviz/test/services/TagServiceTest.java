@@ -1,6 +1,5 @@
 package com.wordviz.test.services;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -20,7 +19,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.wordviz.tag.Tag;
 import com.wordviz.tag.TagRepository;
 import com.wordviz.tag.TagService;
-import com.wordviz.user.UserService;
 
 @RunWith(SpringRunner.class)
 public class TagServiceTest {
@@ -80,14 +78,14 @@ public class TagServiceTest {
 	 
 	 @Test
 	 public void findAllTest() {
-		 List<Tag> tags = ts.findAll();
+		 ts.findAll();
 		 verify(tr, times(1)).findAll();
 		 verify(tr, times(0)).findByType(1);
 	 }
 	 
 	 @Test
 	 public void findAllStoryTest() {
-		 List<Tag> tags = ts.findByType(1);
+		 ts.findByType(1);
 		 verify(tr, times(1)).findByType(1);
 		 verify(tr, times(0)).findAll();
 		 verify(tr, times(0)).findByType(3);
@@ -95,7 +93,7 @@ public class TagServiceTest {
 	 
 	 @Test
 	 public void findAllBlogsTest() {
-		 List<Tag> tags = ts.findByType(2);
+		 ts.findByType(2);
 		 verify(tr,times(1)).findByType(2);
 		 verify(tr, times(0)).findByType(1);
 		 verify(tr, times(0)).findAll();
@@ -103,7 +101,7 @@ public class TagServiceTest {
 	 
 	 @Test
 	 public void findAllTypeRandom() {
-		 List<Tag> tags = ts.findByType(3);
+		 ts.findByType(3);
 		 verify(tr, times(1)).findByType(3);
 		 verify(tr, times(0)).findByType(1);
 		 verify(tr, times(0)).findAll();
@@ -112,7 +110,7 @@ public class TagServiceTest {
 	 @Test
 	 public void addTags() {
 		 Tag tag = new Tag("Adventure", 1);
-		 Tag test = ts.save(tag);
+		 ts.save(tag);
 		 verify(tr, times(1)).save(tag);
 		 verify(tr, times(0)).findByType(1);
 		 verify(tr, times(0)).findAll();

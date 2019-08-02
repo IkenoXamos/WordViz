@@ -6,7 +6,6 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.wordviz.story.Story;
 import com.wordviz.tag.Tag;
 
 import nl.jqno.equalsverifier.EqualsVerifier;
@@ -15,12 +14,10 @@ import nl.jqno.equalsverifier.Warning;
 public class TagTest {
 
 	private Tag t1 = null;
-	private Tag t2 = null;
 
 	@Before
 	public void setUp() throws Exception {
 		t1 = new Tag(1, "Fiction", 1);
-		t2 = new Tag(2, "Non-Fiction", 1);
 	}
 
 	@Test
